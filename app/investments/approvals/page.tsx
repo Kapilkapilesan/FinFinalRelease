@@ -303,11 +303,10 @@ export default function InvestmentApprovalsPage() {
                     ? `Are you sure you want to authorize this investment for ${selectedInv?.customer?.full_name}?`
                     : `Are you sure you want to decline this investment for ${selectedInv?.customer?.full_name}?`}
                 confirmLabel={modalAction === 'APPROVE' ? "Authorize" : "Decline"}
-                variant={modalAction === 'APPROVE' ? 'success' : 'danger'}
+                variant={modalAction === 'APPROVE' ? 'info' : 'danger'}
                 showNoteInput={true}
                 notePlaceholder={modalAction === 'APPROVE' ? "Add approval remarks..." : "Add rejection reason..."}
             />
         </div>
     );
 }
-
