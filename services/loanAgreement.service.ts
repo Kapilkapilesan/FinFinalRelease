@@ -73,6 +73,7 @@ export interface LoanWithAgreement {
         id: number;
         name: string;
         product_code: string;
+        document_fees?: number;
     };
     agreement: LoanAgreement | null;
     guardian_name?: string;
@@ -81,6 +82,7 @@ export interface LoanWithAgreement {
     interest_rate?: number;
     interest_rate_annum?: number;
     service_charge?: number;
+    document_charge?: number;
     g1_details?: any;
     g2_details?: any;
     w1_details?: any;
