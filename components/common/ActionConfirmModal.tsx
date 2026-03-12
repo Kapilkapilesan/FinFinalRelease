@@ -8,7 +8,7 @@ interface ActionConfirmModalProps {
     title: string;
     message: string;
     confirmLabel: string;
-    variant?: 'success' | 'danger' | 'warning' | 'primary';
+    variant?: 'success' | 'danger' | 'warning' | 'primary' | 'info';
     showNoteInput?: boolean;
     notePlaceholder?: string;
 }
@@ -61,6 +61,11 @@ export function ActionConfirmModal({
             icon: <ShieldCheck className="w-8 h-8 text-white" />,
             bg: 'bg-primary-600 shadow-xl shadow-primary-500/30',
             button: 'bg-primary-600 hover:bg-primary-700 shadow-primary-500/20',
+        },
+        info: {
+            icon: <CheckCircle2 className="w-6 h-6 text-primary-600 dark:text-primary-400" />,
+            bg: 'bg-primary-500/10',
+            button: 'bg-primary-600 hover:bg-primary-700 shadow-primary-500/10',
         }
     };
 
