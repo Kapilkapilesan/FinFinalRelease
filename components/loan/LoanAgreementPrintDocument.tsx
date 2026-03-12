@@ -47,7 +47,7 @@ export default function LoanAgreementPrintDocument({ loan, printSection = "all" 
     }
 
     const serviceCharge = Number(loan.service_charge || 0);
-    const docCharges = 1000;
+    const docCharges = Number(loan.document_charge || 1000);
     const lessAmount = serviceCharge + docCharges;
     const bankTransferAmount = loanAmount - lessAmount;
     const defaultInterestMonthly = 5; // Can be made dynamic if field exists
@@ -599,7 +599,7 @@ export default function LoanAgreementPrintDocument({ loan, printSection = "all" 
                         </p>
 
                         <p style={{ marginTop: "10px" }}>
-                            I do hereby give my consent and request to deduct a sum of Rupees <span style={BOLD}>{serviceChargeWords}</span> <span style={BOLD}>{formatAmount(serviceCharge)}</span> from the loan amount as a Service charges and sum of Rs.1000/= as documentation charges
+                            I do hereby give my consent and request to deduct a sum of Rupees <span style={BOLD}>{serviceChargeWords}</span> <span style={BOLD}>{formatAmount(serviceCharge)}</span> from the loan amount as a Service charges and sum of Rs.{formatAmount(docCharges)}/= as documentation charges
                         </p>
                     </div>
 
@@ -623,7 +623,7 @@ export default function LoanAgreementPrintDocument({ loan, printSection = "all" 
                             </div>
                             <div style={{ display: "flex", justifyContent: "space-between", gap: "15px", marginBottom: "3px" }}>
                                 <span>Document Charges</span>
-                                <span>:- 1000/=</span>
+                                <span>:- {formatAmount(docCharges)}/=</span>
                             </div>
                             <div style={{ display: "flex", justifyContent: "space-between", gap: "15px", marginBottom: "3px", borderTop: "1px solid #000", paddingTop: "3px", ...BOLD }}>
                                 <span>Less(-)</span>
